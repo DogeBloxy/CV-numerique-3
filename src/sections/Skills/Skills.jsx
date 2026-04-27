@@ -10,6 +10,7 @@ function Skills() {
           <h2>compétences</h2>
           <div className='skills-text presentation'>
             <span><i>je sais parler ces langues étrangères et je sais aussi utiliser certains outils.</i></span>
+            <span className="span-mobile"><i>oh... vous êtes sur mobile, alors je vous donne le nom des compétences en dessus des icônes alors.</i></span>
           </div>
           <div className='skills-cards'>
             {skills.map(({Icon, name}, index) => (

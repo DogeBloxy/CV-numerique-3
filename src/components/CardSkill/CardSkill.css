@@ -30,6 +30,7 @@
 }
 
 .name-skill-mobile {
+    margin-top: 5px;
     padding: 4px 8px;
     border-radius: 5px;
     font-family: var(--font-mono);
@@ -41,6 +42,10 @@
 @media (max-width: 768px) {
     .name-skill-mobile {
         display: block;
+    }
+
+    .name-skill {
+        display: none;
     }
 }
 

@@ -46,7 +46,6 @@ function App() {
         ease: "power2.out",
       })
     }
-
     window.addEventListener("mousemove", handleMove)
     return () => {
       window.removeEventListener("mousemove", handleMove)

@@ -29,10 +29,20 @@
     font-size: 0.9rem;
 }
 
+.span-mobile {
+    display: none;
+}
+
 .skills-cards {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .span-mobile {
+        display: block;
+    }
 }
