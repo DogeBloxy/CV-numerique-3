@@ -16,8 +16,8 @@
 
 .name-skill {
     position: fixed;
-    top: 0;
-    left: 20px;
+    top: 20px;
+    left: -16px;
     background: var(--primary);
     padding: 4px 8px;
     border-radius: 5px;
