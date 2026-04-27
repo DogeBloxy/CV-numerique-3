@@ -1,0 +1,31 @@
+.app {
+    position: relative;
+}
+
+.portfolio-content {
+    padding: 0rem 10%;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #f0f0f0;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  mask-image: radial-gradient(
+    circle var(--mask-size) at var(--x) var(--y),
+    black 90%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 1024px) {
+
+
+}
+
+@media (max-width: 768px) {
+
+}
