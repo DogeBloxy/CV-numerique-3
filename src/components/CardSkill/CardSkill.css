@@ -1,0 +1,45 @@
+.card-skill  {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.icon-skill {
+    width: 100px;
+    height: 100px;
+}
+
+.name-skill {
+    position: fixed;
+    top: 0;
+    left: 20px;
+    background: var(--primary);
+    padding: 4px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 999;
+}
+
+.name-skill-mobile {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .name-skill-mobile {
+        display: block;
+    }
+}
+

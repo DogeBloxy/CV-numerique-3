@@ -67,7 +67,7 @@ function Hero() {
     }, { scope: heroRef })
 
     return (
-        <section className='hero-container' ref={heroRef}>
+        <section className='hero-container' ref={heroRef} id='about'>
             <div className='hero-intro'>
                 <div className='hero-content'>
                     <h2>à propos</h2>

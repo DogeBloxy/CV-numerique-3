@@ -8,6 +8,7 @@ import Hero from './sections/Hero/Hero';
 import Intro from './sections/Intro/Intro';
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
+import Skills from './sections/Skills/Skills'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -61,7 +62,7 @@ function App() {
           <Navbar />
           <div className='portfolio-content'>
             <Hero />
-            
+            <Skills />
           </div>
         <Footer />
         </ReactLenis>
