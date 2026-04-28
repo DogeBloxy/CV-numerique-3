@@ -2,14 +2,15 @@ import './Navbar.css'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Flip } from 'gsap/all'
-import { useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
+import { ActiveSectionContext } from '../../context/ActiveSectionContext'
 
 const tabs = [{ text: "à propos", link: "about" }, { text: "compétences", link: "skills" }, { text: "projets", link: "projects" }, { text: "contact", link: "contact" }];
 
 gsap.registerPlugin(useGSAP, Flip);
 
 function Navbar() {
-    const [active, setActive] = useState("");
+    const { active } = useContext(ActiveSectionContext);
     const pillRef = useRef();
     const navRef = useRef();
     const tabRefs = useRef({});
@@ -23,8 +24,8 @@ function Navbar() {
         })
     }, { scope: navRef })
 
-    const handleClick = (tab) => {
-        const el = tabRefs.current[tab.link];
+    useGSAP(() => {
+        const el = tabRefs.current[active];
         if (!el) return;
 
         const navRect = navRef.current.getBoundingClientRect();
@@ -38,9 +39,28 @@ function Navbar() {
             display: 'block',
         });
 
-        setActive(tab.link);
-        
-    }
+    }, [active], { scope: navRef })
+
+
+    // Si jamais vous préferez un système de clique plutôt que du ScrollTrigger.
+    // const handleClick = (tab) => {
+    //     const el = tabRefs.current[tab.link];
+    //     if (!el) return;
+
+    //     const navRect = navRef.current.getBoundingClientRect();
+    //     const tabRect = el.getBoundingClientRect();
+
+    //     gsap.to(pillRef.current, {
+    //         x: tabRect.left - navRect.left,
+    //         width: tabRect.width,
+    //         height: tabRect.height,
+    //         duration: 0.4,
+    //         display: 'block',
+    //     });
+
+    //     setActive(tab.link);
+
+    // }
 
 
     return (
@@ -52,7 +72,6 @@ function Navbar() {
                         key={tab.link}
                         ref={el => tabRefs.current[tab.link] = el}
                         className={`navbar-element ${active === tab.link ? "active" : ""}`}
-                        onClick={() => handleClick(tab)}
                         href={`#${tab.link}`}
                     >
                         <li>

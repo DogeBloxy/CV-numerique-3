@@ -9,6 +9,7 @@ import Intro from './sections/Intro/Intro';
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Skills from './sections/Skills/Skills'
+import { ActiveSectionProvider } from './context/ActiveSectionContext'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -17,14 +18,14 @@ function App() {
   const [introDone, setIntroDone] = useState(false);
   const websiteRef = useRef();
   const lenisRef = useRef()
-  
+
   useEffect(() => {
     function update(time) {
       lenisRef.current?.lenis?.raf(time * 1000)
     }
-  
+
     gsap.ticker.add(update)
-  
+
     return () => gsap.ticker.remove(update)
   }, [])
 
@@ -57,13 +58,15 @@ function App() {
     <div className="app" ref={websiteRef}>
       {!introDone && <Intro onComplete={() => setIntroDone(true)} />}
       {introDone && (
-        <ReactLenis root options={{ autoRaf: false,  naiveDimensions: true }} ref={lenisRef}>
-          <Navbar />
-          <div className='portfolio-content'>
-            <Hero />
-            <Skills />
-          </div>
-        <Footer />
+        <ReactLenis root options={{ autoRaf: false, naiveDimensions: true }} ref={lenisRef}>
+          <ActiveSectionProvider>
+            <Navbar />
+            <div className='portfolio-content'>
+              <Hero />
+              <Skills />
+            </div>
+          </ActiveSectionProvider>
+          <Footer />
         </ReactLenis>
       )}
     </div>

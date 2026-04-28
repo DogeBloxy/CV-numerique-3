@@ -1,19 +1,31 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import './Hero.css'
 import tiagoChibi from '../../assets/images/tiago-chibi.png'
 import { gsap } from 'gsap'
-import { Draggable, InertiaPlugin, SplitText } from 'gsap/all'
+import { Draggable, InertiaPlugin, ScrollTrigger, SplitText } from 'gsap/all'
 import { useGSAP } from '@gsap/react'
+import { ActiveSectionContext } from '../../context/ActiveSectionContext'
 
-gsap.registerPlugin(useGSAP, Draggable, InertiaPlugin, SplitText)
+gsap.registerPlugin(useGSAP, Draggable, InertiaPlugin, SplitText, ScrollTrigger)
 
 function Hero() {
+    const { setActive } = useContext(ActiveSectionContext);
+
     const heroRef = useRef();
     const avatarRef = useRef();
     const nameRef = useRef();
     const heroTextRef = useRef();
     const avatarSectionRef = useRef();
     const tlRef = useRef();
+
+    useGSAP(() => {
+        ScrollTrigger.create({
+            trigger: heroRef.current,
+            start: "top center",
+            onEnter: () => setActive("about"),
+            onEnterBack: () => setActive("about"),
+        })
+    }, { scope: heroRef })
 
     useGSAP(() => {
         const tl = gsap.timeline()
@@ -28,7 +40,7 @@ function Hero() {
             ease: "back.out(1.7)",
         })
 
-         tl.to({}, { duration: 0.6 })
+        tl.to({}, { duration: 0.6 })
 
         SplitText.create(nameRef.current, {
             type: "words, chars",
