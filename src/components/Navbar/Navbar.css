@@ -47,3 +47,21 @@
     z-index: 0;
     pointer-events: none;
 }
+
+@media (max-width: 768px) {
+    .navbar-container {
+        position: sticky;
+        top: 20px;
+        text-align: center;
+    }
+
+    .pill {
+        left: auto;
+        bottom: 0;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        gap: 0;
+    }
+}

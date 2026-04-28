@@ -94,6 +94,11 @@
 }
 
 @media (max-width: 768px) {
+    .hero-container {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
     .hero-intro {
         flex-direction: column-reverse;
     }

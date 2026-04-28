@@ -2,7 +2,7 @@ import './Navbar.css'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Flip } from 'gsap/all'
-import { useContext, useRef, useState } from 'react'
+import { useContext, useRef, useState, useEffect } from 'react'
 import { ActiveSectionContext } from '../../context/ActiveSectionContext'
 
 const tabs = [{ text: "à propos", link: "about" }, { text: "compétences", link: "skills" }, { text: "projets", link: "projects" }, { text: "contact", link: "contact" }];
@@ -14,6 +14,14 @@ function Navbar() {
     const pillRef = useRef();
     const navRef = useRef();
     const tabRefs = useRef({});
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreen = () => setIsMobile(window.innerWidth <= 768);
+        checkScreen();
+        window.addEventListener('resize', checkScreen);
+        return () => window.removeEventListener('resize', checkScreen);
+    }, []);
 
     useGSAP(() => {
         gsap.from(navRef.current, {
@@ -31,15 +39,25 @@ function Navbar() {
         const navRect = navRef.current.getBoundingClientRect();
         const tabRect = el.getBoundingClientRect();
 
-        gsap.to(pillRef.current, {
-            x: tabRect.left - navRect.left,
-            width: tabRect.width,
-            height: tabRect.height,
-            duration: 0.4,
-            display: 'block',
-        });
+        if (isMobile) {
+            gsap.to(pillRef.current, {
+                y: tabRect.top - navRect.top,
+                width: tabRect.width,
+                height: tabRect.height,
+                duration: 0.4,
+                display: 'block',
+            });
+        } else {
+            gsap.to(pillRef.current, {
+                x: tabRect.left - navRect.left,
+                width: tabRect.width,
+                height: tabRect.height,
+                duration: 0.4,
+                display: 'block',
+            });
+        }
 
-    }, [active], { scope: navRef })
+    }, [active, isMobile], { scope: navRef })
 
 
     // Si jamais vous préferez un système de clique plutôt que du ScrollTrigger.
