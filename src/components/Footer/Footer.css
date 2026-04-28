@@ -75,3 +75,17 @@ footer::selection {
 .footer-icons img:hover {
     transform: translateY(-4px);
 }
+
+@media (max-width: 768px) {
+    .footer-second-row {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .footer-navlist {
+        margin-top: 10px;
+    }
+
+}

@@ -55,13 +55,22 @@ p {
 
 a {
     text-decoration: none;
+    cursor: none;
 }
 
 .intro-bubble-text,
 button {
     font-family: var(--font-mono);
+    cursor: none;
 }
 
 .primary {
     color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    a,
+    button {
+        cursor: pointer;
+    }
 }
