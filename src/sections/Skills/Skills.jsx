@@ -21,7 +21,7 @@ function Skills() {
       scrollTrigger: {
         trigger: skillsRef.current,
         start: "top center",
-        markers: true,
+        // markers: true,
         onEnter: () => setActive("skills"),
         onEnterBack: () => setActive("skills"),
       },

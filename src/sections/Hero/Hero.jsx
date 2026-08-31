@@ -23,7 +23,7 @@ function Hero() {
             scrollTrigger: {
                 trigger: heroRef.current,
                 start: "top center",
-                markers: true,
+                // markers: true,
                 onEnter: () => setActive("about"),
                 onEnterBack: () => setActive("about"),
             },
