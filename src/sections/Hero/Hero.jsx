@@ -19,12 +19,15 @@ function Hero() {
     const tlRef = useRef();
 
     useGSAP(() => {
-        ScrollTrigger.create({
-            trigger: heroRef.current,
-            start: "top center",
-            onEnter: () => setActive("about"),
-            onEnterBack: () => setActive("about"),
-        })
+        gsap.to(heroRef.current, {
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: "top center",
+                markers: true,
+                onEnter: () => setActive("about"),
+                onEnterBack: () => setActive("about"),
+            },
+        });
     }, { scope: heroRef })
 
     useGSAP(() => {
@@ -36,17 +39,17 @@ function Hero() {
         tl.from(avatarSectionRef.current, {
             scale: 0.6,
             opacity: 0,
-            duration: 1,
+            duration: 0.5,
             ease: "back.out(1.7)",
         })
 
-        tl.to({}, { duration: 0.6 })
+        tl.to({}, { duration: 0.3 })
 
         SplitText.create(nameRef.current, {
             type: "words, chars",
             onSplit(self) {
                 tl.from(self.chars, {
-                    duration: 0.5,
+                    duration: 0.3,
                     y: 30,
                     ease: "power2.out",
                     stagger: 0.05,
@@ -60,7 +63,7 @@ function Hero() {
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 100,
-                    duration: 0.6,
+                    duration: 0.4,
                     ease: "power2.out",
                     stagger: 0.1
                 })

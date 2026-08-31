@@ -30,7 +30,7 @@ function App() {
   }, [])
 
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.set(document.documentElement, { "--mask-size": 0 })
     const setX = gsap.quickSetter(document.documentElement, "--x", "px")
     const setY = gsap.quickSetter(document.documentElement, "--y", "px")

@@ -1,11 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from 'gsap';
+import { createPortal } from "react-dom";
 import "./CardSkill.css";
 import { useRef } from "react";
 
 gsap.registerPlugin(useGSAP);
 
-function CardSkill({Icon, name}) {
+function CardSkill({ Icon, name }) {
     const cardSkillRef = useRef();
     const cardSkillNameRef = useRef();
 
@@ -13,7 +14,7 @@ function CardSkill({Icon, name}) {
         const setX = gsap.quickSetter(document.documentElement, "--x", "px")
         const setY = gsap.quickSetter(document.documentElement, "--y", "px")
 
-        gsap.set(cardSkillNameRef.current, {opacity:0})
+        gsap.set(cardSkillNameRef.current, { opacity: 0 })
 
         const handleMove = (e) => {
             setX(e.clientX)
@@ -33,12 +34,15 @@ function CardSkill({Icon, name}) {
 
         window.addEventListener("mousemove", handleMove)
         return () => window.removeEventListener("mousemove", handleMove)
-    }, [])
+    }, []);
 
     return (
         <div className="card-skill" ref={cardSkillRef}>
             <Icon className="icon-skill" />
-            <p className="name-skill" ref={cardSkillNameRef}>{name}</p>
+            {createPortal(
+                <p className="name-skill" ref={cardSkillNameRef}>{name}</p>,
+                document.body
+            )}
             <p className="name-skill-mobile">{name}</p>
         </div>
     )
