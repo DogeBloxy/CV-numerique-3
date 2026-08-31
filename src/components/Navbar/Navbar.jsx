@@ -59,28 +59,6 @@ function Navbar() {
 
     }, [active, isMobile], { scope: navRef })
 
-
-    // Si jamais vous préferez un système de clique plutôt que du ScrollTrigger.
-    // const handleClick = (tab) => {
-    //     const el = tabRefs.current[tab.link];
-    //     if (!el) return;
-
-    //     const navRect = navRef.current.getBoundingClientRect();
-    //     const tabRect = el.getBoundingClientRect();
-
-    //     gsap.to(pillRef.current, {
-    //         x: tabRect.left - navRect.left,
-    //         width: tabRect.width,
-    //         height: tabRect.height,
-    //         duration: 0.4,
-    //         display: 'block',
-    //     });
-
-    //     setActive(tab.link);
-
-    // }
-
-
     return (
         <nav className='navbar-container' ref={navRef}>
             <span className="pill" ref={pillRef} />

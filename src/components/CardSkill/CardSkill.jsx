@@ -1,14 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from 'gsap';
 import "./CardSkill.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 gsap.registerPlugin(useGSAP);
 
 function CardSkill({Icon, name}) {
     const cardSkillRef = useRef();
     const cardSkillNameRef = useRef();
-    const [isHovered, setIsHovered] = useState(false);
 
     useGSAP(() => {
         const setX = gsap.quickSetter(document.documentElement, "--x", "px")
