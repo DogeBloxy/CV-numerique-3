@@ -1,11 +1,12 @@
 import "./Projects.css";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
 import { ActiveSectionContext } from "../../context/ActiveSectionContext";
+import { projects } from "../../data/projects/projectsArray";
 import { useRef, useContext } from 'react';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -36,8 +37,12 @@ function Projects() {
                 <div className='projects-text presentation'>
                     <span><i>des projets réalisé à l'école ou pendant mon temps libre.</i></span>
                 </div>
-
-                <ProjectCard />
+                <div className="projects-cards">
+                    {projects.map(project => (
+                        <ProjectCard key={project.id} project={project} />
+                    ))}
+                </div>
+                
             </div>
         </section>
     )

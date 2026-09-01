@@ -29,6 +29,15 @@
     font-size: 0.9rem;
 }
 
+.projects-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 3rem;
+}
+
 @media (max-width: 768px) {
     .projects-container {
         margin-top: 5vh;

@@ -104,7 +104,7 @@ function Hero() {
                 </div>
                 <div className='hero-image' ref={avatarSectionRef}>
                     <img className='avatar-hero' ref={avatarRef} src={tiagoChibi} alt="Avatar chibi de Tiago" />
-                    <span><i>tu sais que tu peux me faire tourner la tête? essaie, ça va être marrant.</i></span>
+                    <span><i>tu sais que tu peux me faire tourner la tête?</i></span>
                 </div>
             </div>
 
