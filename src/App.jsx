@@ -10,6 +10,7 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Skills from './sections/Skills/Skills'
 import { ActiveSectionProvider } from './context/ActiveSectionContext'
+import Projects from './sections/Projects/Projects'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -64,6 +65,7 @@ function App() {
             <div className='portfolio-content'>
               <Hero />
               <Skills />
+              <Projects />
             </div>
           </ActiveSectionProvider>
           <Footer />
