@@ -8,7 +8,7 @@ export const skills = [
     {Icon: FaCss3Alt, name: "CSS3"},
     {Icon: FaJs, name: "JavaScript"},
     {Icon: SiTypescript, name: "TypeScript"},
-    {Icon: FaReact, name: "React / React Native"},
+    {Icon: FaReact, name: "React / Native"},
     {Icon: FaPhp, name: "PHP"},
     {Icon: FaSymfony, name: "Symfony"},
     {Icon: FaWordpress, name: "Wordpress"},

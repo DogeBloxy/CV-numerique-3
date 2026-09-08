@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from 'react'
-import './App.css'
-import { ReactLenis } from 'lenis/react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
+import { useEffect, useRef, useState } from 'react';
+import './App.css';
+import { ReactLenis } from 'lenis/react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import Hero from './sections/Hero/Hero';
 import Intro from './sections/Intro/Intro';
-import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
-import Skills from './sections/Skills/Skills'
-import { ActiveSectionProvider } from './context/ActiveSectionContext'
-import Projects from './sections/Projects/Projects'
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Skills from './sections/Skills/Skills';
+import Contact from './sections/Contact/Contact';
+import { ActiveSectionProvider } from './context/ActiveSectionContext';
+import Projects from './sections/Projects/Projects';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -66,6 +67,7 @@ function App() {
               <Hero />
               <Skills />
               <Projects />
+              <Contact />
             </div>
           </ActiveSectionProvider>
           <Footer />
