@@ -31,7 +31,7 @@ function Footer() {
                 <a href="https://github.com/DogeBloxy" target='_blank'><img src={github} alt="Logo de Github" /></a>
                 <a href="https://www.linkedin.com/in/tiago-labro-31479029b/" target='_blank'><img src={linkedin} alt="Logo de LinkedIn" /></a>
                 <a href="mailto:labrotiago@gmail.com" target='_blank'><img src={mail} alt="Logo de Email" /></a>
-                <a href="tel:0770000599" target='_blank'><img src={phone} alt="Logo de Téléphone" /></a>
+                <a href="tel:+330770000599" target='_blank'><img src={phone} alt="Logo de Téléphone" /></a>
             </div>
         </div>
     </footer>

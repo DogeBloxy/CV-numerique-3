@@ -4,10 +4,34 @@ import shifumiImg from "../../assets/images/projects/shifumi.png"
 import samusocialparisImg from "../../assets/images/projects/samusocialparis.jpg"
 import popcornflixImg from "../../assets/images/projects/logo-popcornflix.png"
 import instantjobsImg from "../../assets/images/projects/instant-jobs.png"
+import portfolioImg from "../../assets/images/projects/portfolio.png"
+import portfolioOldImg from "../../assets/images/projects/portfolio-old.png"
 
 export const projects = [
     {
         id: 1,
+        title: "ancien portfolio",
+        image: portfolioOldImg,
+        type: "personnel",
+        status: "archivé",
+        description: "mon ancien portfolio où j'ai repris le thème d'un de mes jeux vidéos préférés balatro.",
+        tags: ["react", "javascript", "portfolio", "balatro"],
+        github: "https://github.com/DogeBloxy/CV-Numerique-2",
+        live: ""
+    },
+    {
+        id: 2,
+        title: "portfolio",
+        image: portfolioImg,
+        type: "personnel",
+        status: "terminé",
+        description: "mon portfolio actuel où vous vous y trouvez.",
+        tags: ["react", "javascript", "gsap", "portfolio"],
+        github: "https://github.com/DogeBloxy/CV-numerique-3",
+        live: "https://tiago-labro-portfolio.vercel.app"
+    },
+    {
+        id: 3,
         title: "bon appétit",
         image: bonAppetitImg,
         type: "école",
@@ -18,7 +42,7 @@ export const projects = [
         live: "https://dogebloxy.github.io/Bon-app-tit/site_bon_appetit.html"
     },
     {
-        id: 2,
+        id: 4,
         title: "allo-movies",
         image: allomovieImg,
         type: "école",
@@ -29,7 +53,7 @@ export const projects = [
         live: "https://lavignechappazflorian.github.io/allomovies/"
     },
     {
-        id: 3,
+        id: 5,
         title: "shifumi",
         image: shifumiImg,
         type: "école",
@@ -40,7 +64,7 @@ export const projects = [
         live: "https://lavignechappazflorian.github.io/allomovies/"
     },
     {
-        id: 4,
+        id: 6,
         title: "samusocialparis",
         image: samusocialparisImg,
         type: "école",
@@ -51,7 +75,7 @@ export const projects = [
         live: "https://lavignechappazflorian.github.io/allomovies/"
     },
     {
-        id: 5,
+        id: 7,
         title: "popcornflix",
         image: popcornflixImg,
         type: "école",
@@ -62,7 +86,7 @@ export const projects = [
         live: ""
     },
     {
-        id: 6,
+        id: 8,
         title: "instant jobs",
         image: instantjobsImg,
         type: "école",
