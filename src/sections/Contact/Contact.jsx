@@ -80,15 +80,15 @@ function Contact() {
                     <form className="contact-form" onSubmit={handleMessage} ref={formRef}>
                         <div className="form-group">
                             <label for="name">nom</label>
-                            <input type="text" id="name" name="name" placeholder="ton nom" required></input>
+                            <input type="text" id="name" name="name" placeholder="votre nom" required></input>
                         </div>
                         <div className="form-group">
                             <label for="email">email</label>
-                            <input type="text" id="email" name="email" placeholder="ton@email.com" required></input>
+                            <input type="text" id="email" name="email" placeholder="votre@email.com" required></input>
                         </div>
                         <div className="form-group">
                             <label for="message">message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="ton message..." required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="votre message..." required></textarea>
                         </div>
                         <button type="submit" class="btn-send">envoyer le message</button>
                     </form>
