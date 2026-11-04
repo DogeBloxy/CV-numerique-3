@@ -60,7 +60,7 @@ export const projects = [
         status: "terminé",
         description: "petit mini-jeu de shifumi sur le thème de noël en groupe de 3.",
         tags: ["html", "css", "javascript", "noël"],
-        github: "https://github.com/LavigneChappazFlorian/allomovies",
+        github: "https://github.com/LavigneChappazFlorian/shifumi-game",
         live: "https://lavignechappazflorian.github.io/allomovies/"
     },
     {
