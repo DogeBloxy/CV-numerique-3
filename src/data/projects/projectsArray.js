@@ -90,7 +90,7 @@ export const projects = [
         title: "instant jobs",
         image: instantjobsImg,
         type: "école",
-        status: "en cours",
+        status: "terminé",
         description: "instant jobs est une application web full-stack qui facilite la mise en relation entre employeurs et candidats.",
         tags: ["react", "typescript", "docker", "express.js"],
         github: "https://github.com/LemaitreEnzo/instant-jobs",
